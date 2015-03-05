@@ -1,7 +1,7 @@
 {
   "name": "flow",
   "version": "0.0.1",
-  "description": "Minimal & basic async flow control for nodejs and browser",
+  "description": "Minimal & basic flow control for nodejs and browser",
   "main": "index.js",
   "repository": {
     "type": "git",

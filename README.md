@@ -1,7 +1,7 @@
 flow
 ========
 
-Simple & basic flow control library with no dependencies. Its simple, fast. No BS. Its an extension of `fastsync` https://github.com/joekarl/fastsync.
+Simple & basic flow control with no dependencies. Its simple, fast. No BS. Its an extension of `fastsync` https://github.com/joekarl/fastsync.
 
 Works in the browser or in node.js.
 
