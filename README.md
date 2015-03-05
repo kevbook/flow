@@ -18,100 +18,107 @@ All functions are resolved immediately, to delay/overhead of next tick of the ev
 
 ##Examples
 ####parallel
-
-    flow.parallel([
-        function one(cb) {
-            setTimeout(function(){
-                cb(null, 1);
-            }, 100);
-        },
-        function two(cb) {
-            setTimeout(function(){
-                cb(null, 2);
-            }, 100);
-        },
-        function three(cb) {
-            setTimeout(function(){
-                cb(null, 3);
-            }, 100);
-        },
-        function four(cb) {
-            setTimeout(function(){
-                cb(null, 4);
-            }, 100);
-        }
-    ], function(err, results){
-        //100ms later
-        console.log(results); //[1, 2, 3, 4]
-    });
+  ```js
+  flow.parallel([
+    function one(cb) {
+      setTimeout(function(){
+          cb(null, 1);
+      }, 100);
+    },
+    function two(cb) {
+      setTimeout(function(){
+          cb(null, 2);
+      }, 100);
+    },
+    function three(cb) {
+      setTimeout(function(){
+          cb(null, 3);
+      }, 100);
+    },
+    function four(cb) {
+      setTimeout(function(){
+          cb(null, 4);
+      }, 100);
+    }
+  ], function(err, results){
+    //100ms later
+    console.log(results); //[1, 2, 3, 4]
+  });
+  ```
 
 ####series
-
-    flow.series([
-        function one(cb) {
-            setTimeout(function(){
-                cb(null, 1);
-            }, 100);
-        },
-        function two(cb) {
-            setTimeout(function(){
-                cb(null, 2);
-            }, 100);
-        },
-        function three(cb) {
-            setTimeout(function(){
-                cb(null, 3);
-            }, 100);
-        },
-        function four(cb) {
-            setTimeout(function(){
-                cb(null, 4);
-            }, 100);
-        }
-    ], function(err, results){
-        //400ms later
-        console.log(results); //[1, 2, 3, 4]
-    });
+  ```js
+  flow.series([
+    function one(cb) {
+      setTimeout(function(){
+          cb(null, 1);
+      }, 100);
+    },
+    function two(cb) {
+      setTimeout(function(){
+          cb(null, 2);
+      }, 100);
+    },
+    function three(cb) {
+      setTimeout(function(){
+          cb(null, 3);
+      }, 100);
+    },
+    function four(cb) {
+      setTimeout(function(){
+          cb(null, 4);
+      }, 100);
+    }
+  ], function(err, results){
+    //400ms later
+    console.log(results); //[1, 2, 3, 4]
+  });
+  ```
 
 ####waterfall
-
-    flow.waterfall([
-        function(cb) {
-            cb(null, 8);
-        },
-        function split(v, cb) {
-            //v = 8
-            cb(null, v / 2, v / 2);
-        },
-        function square(v1, v2, cb) {
-            //v1 = 4, v2 = 4
-            cb(null, v1 * v2);
-        },
-        function minus1(v, cb) {
-            //v = 16
-            cb(null, v - 1);
-        }
-    ], function(err, result){
-        console.log(result); //15
-    });
+  ```js
+  flow.waterfall([
+    function(cb) {
+      cb(null, 8);
+    },
+    function split(v, cb) {
+      //v = 8
+      cb(null, v / 2, v / 2);
+    },
+    function square(v1, v2, cb) {
+      //v1 = 4, v2 = 4
+      cb(null, v1 * v2);
+    },
+    function minus1(v, cb) {
+      //v = 16
+      cb(null, v - 1);
+    }
+  ], function(err, result){
+    console.log(result); //15
+  });
+  ```
 
 ####parallelMap
 **Note** Results can be processed in any order but will be returned in the order submitted
 
-    flow.parallelMap([1,2,3], function mult5(v, cb){
-        setTimeout(function(){
-            cb(null, v * 5);
-        }, 100);
-    }, function(err, mappedArray){
-        console.log(mappedArray); //[5,10,15]
-    });
+  ```js
+  flow.parallelMap([1,2,3], function mult5(v, cb){
+    setTimeout(function(){
+      cb(null, v * 5);
+    }, 100);
+  }, function(err, mappedArray){
+    console.log(mappedArray); //[5,10,15]
+  });
+  ```
 
 ####seriesMap
 
-    flow.seriesMap([1,2,3], function mult5(v, cb){
-        setTimeout(function(){
-            cb(null, v * 5);
-        }, 100);
-    }, function(err, mappedArray){
-        console.log(mappedArray); //[5,10,15]
-    });
+  ```js
+  flow.seriesMap([1,2,3], function mult5(v, cb){
+      setTimeout(function(){
+          cb(null, v * 5);
+      }, 100);
+  }, function(err, mappedArray){
+      console.log(mappedArray); //[5,10,15]
+  });
+  ```
