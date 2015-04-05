@@ -1,5 +1,5 @@
 {
-  "name": "@kevbook/flow",
+  "name": "kevbook.flow",
   "version": "0.0.1",
   "description": "Minimal & basic flow control for nodejs and browser",
   "main": "index.js",

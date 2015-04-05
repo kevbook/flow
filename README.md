@@ -18,8 +18,8 @@ All functions are resolved immediately, to delay/overhead of next tick of the ev
 
 ##### Usage
 ```js
-$ npm install @kevbook/flow --save
-var flow = require('@kevbook/flow');
+$ npm install kevbook.flow --save
+var flow = require('kevbook.flow');
 ```
 
 ##Examples
