@@ -1,5 +1,5 @@
 {
-  "name": "flow",
+  "name": "@kevbook/flow",
   "version": "0.0.1",
   "description": "Minimal & basic flow control for nodejs and browser",
   "main": "index.js",
@@ -7,5 +7,17 @@
     "type": "git",
     "url": "https://github.com/kevbook/flow.git"
   },
-  "author": "Karan Sakhuja"
+  "author": "Karan Sakhuja",
+  "bugs": {
+    "url": "https://github.com/kevbook/flow/issues"
+  },
+  "homepage": "https://github.com/kevbook/flow",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "async",
+    "flowcontrol"
+  ],
+  "license": "ISC"
 }

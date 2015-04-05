@@ -3,7 +3,7 @@ flow
 
 Simple & basic flow control with no dependencies. Its simple, fast. No BS. Its an extension of `fastsync` https://github.com/joekarl/fastsync.
 
-Works in the browser or in node.js.
+Use it in `browsify`, `webpack`, `node.js/io.js`
 
 #### Covers 4 basic use cases:
 
@@ -15,6 +15,11 @@ Works in the browser or in node.js.
 
 ##Note about function resolution
 All functions are resolved immediately, to delay/overhead of next tick of the event loop. If you need to evaluate on next tick, use either setImmediate or process.nextTick. Add a wrapper, probably on your functions.
+
+##### Usage
+  npm install scapegoat --save
+
+  var flow = require('@kevbook/flow');`
 
 ##Examples
 ####parallel
@@ -112,7 +117,6 @@ All functions are resolved immediately, to delay/overhead of next tick of the ev
   ```
 
 ####seriesMap
-
   ```js
   flow.seriesMap([1,2,3], function mult5(v, cb){
       setTimeout(function(){
