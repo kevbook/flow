@@ -17,9 +17,10 @@ Use it in `browsify`, `webpack`, `node.js/io.js`
 All functions are resolved immediately, to delay/overhead of next tick of the event loop. If you need to evaluate on next tick, use either setImmediate or process.nextTick. Add a wrapper, probably on your functions.
 
 ##### Usage
-  npm install scapegoat --save
-
-  var flow = require('@kevbook/flow');`
+```bash
+  $ npm install scapegoat --save
+  var flow = require('@kevbook/flow');
+```
 
 ##Examples
 ####parallel
