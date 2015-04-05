@@ -1,6 +1,6 @@
 {
   "name": "kevbook.flow",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Minimal & basic flow control for nodejs and browser",
   "main": "index.js",
   "repository": {
